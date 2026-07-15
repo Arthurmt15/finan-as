@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { usePlayerStore } from '@/stores/usePlayerStore'
 import { DialogOverlay } from '@/components/ui/DialogOverlay'
+import { NumericKeypad } from '@/components/ui/NumericKeypad'
 
 /**
  * Página "Orçamento" — define HP máximo (orçamento mensal) e
@@ -37,12 +38,9 @@ export default function OrcamentoPage() {
           <label className="font-pixel text-[8px] text-ps1-white/70 block mb-1">
             ORÇAMENTO TOTAL (HP MÁXIMO)
           </label>
-          <input
-            type="number"
-            min="1"
+          <NumericKeypad
             value={budgetInput}
-            onChange={(e) => { setBudgetInput(e.target.value); setSaved(false) }}
-            className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none focus:border-ps1-yellow"
+            onChange={(v) => { setBudgetInput(v); setSaved(false) }}
           />
           <p className="font-mono text-[10px] text-ps1-white/40 mt-1">
             Valor atual: R$ {maxHp.toFixed(0)} · HP restante: R$ {hp.toFixed(0)}
@@ -53,12 +51,9 @@ export default function OrcamentoPage() {
           <label className="font-pixel text-[8px] text-ps1-white/70 block mb-1">
             RESERVA / ECONOMIAS (MP)
           </label>
-          <input
-            type="number"
-            min="0"
+          <NumericKeypad
             value={savingsInput}
-            onChange={(e) => { setSavingsInput(e.target.value); setSaved(false) }}
-            className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none focus:border-ps1-yellow"
+            onChange={(v) => { setSavingsInput(v); setSaved(false) }}
           />
           <p className="font-mono text-[10px] text-ps1-white/40 mt-1">
             Valor atual: R$ {maxMp.toFixed(0)} · MP atual: R$ {mp.toFixed(0)}
