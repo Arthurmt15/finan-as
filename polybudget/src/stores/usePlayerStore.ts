@@ -95,8 +95,8 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
     set({ maxHp: newMaxHp, hp: Math.max(0, newHp) })
   },
 
-  /** Define a reserva financeira (MP) */
-  setSavings: (newMp) => {
-    set({ mp: newMp })
+  /** Define a reserva financeira (MP máximo) */
+  setSavings: (newMaxMp) => {
+    set({ maxMp: newMaxMp, mp: newMaxMp })
   },
 }))
