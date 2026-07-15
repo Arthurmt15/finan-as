@@ -1,0 +1,9 @@
+# Dependências (presentes em qualquer diretório do projeto)
+node_modules
+
+# Build do Next.js
+.next
+out
+
+# Arquivo espúrio gerado na raiz (não faz parte do projeto)
+nul
