@@ -115,11 +115,11 @@ export default function NovoGastoPage() {
                 type="number"
                 step="0.01"
                 min="0.01"
-                readOnly
                 placeholder="0,00"
                 value={amount}
+                onChange={(e) => setAmount(e.target.value)}
                 className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm
-                           px-3 py-2 outline-none"
+                           px-3 py-2 outline-none focus:border-ps1-yellow"
               />
             </div>
             <div className="mb-4">

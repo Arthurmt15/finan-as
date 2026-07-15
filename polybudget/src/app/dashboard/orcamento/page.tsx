@@ -40,9 +40,9 @@ export default function OrcamentoPage() {
           <input
             type="number"
             min="1"
-            readOnly
             value={budgetInput}
-            className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none"
+            onChange={(e) => { setBudgetInput(e.target.value); setSaved(false) }}
+            className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none focus:border-ps1-yellow"
           />
           <p className="font-mono text-[10px] text-ps1-white/40 mt-1">
             Atual: {maxHp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} · HP restante: {hp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
@@ -56,9 +56,9 @@ export default function OrcamentoPage() {
           <input
             type="number"
             min="0"
-            readOnly
             value={savingsInput}
-            className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none"
+            onChange={(e) => { setSavingsInput(e.target.value); setSaved(false) }}
+            className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none focus:border-ps1-yellow"
           />
           <p className="font-mono text-[10px] text-ps1-white/40 mt-1">
             Atual: {maxMp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} · MP atual: {mp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
