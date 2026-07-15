@@ -1,0 +1,14 @@
+{
+  "name": "PolyBudget — Status Financeiro",
+  "short_name": "PolyBudget",
+  "description": "Gerencie seu orçamento como em um RPG clássico PS1",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#101010",
+  "theme_color": "#0000a0",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
