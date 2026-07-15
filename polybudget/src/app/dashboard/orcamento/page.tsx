@@ -45,7 +45,7 @@ export default function OrcamentoPage() {
             className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none"
           />
           <p className="font-mono text-[10px] text-ps1-white/40 mt-1">
-            Valor atual: R$ {maxHp.toFixed(0)} · HP restante: R$ {hp.toFixed(0)}
+            Atual: {maxHp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} · HP restante: {hp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function OrcamentoPage() {
             className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none"
           />
           <p className="font-mono text-[10px] text-ps1-white/40 mt-1">
-            Valor atual: R$ {maxMp.toFixed(0)} · MP atual: R$ {mp.toFixed(0)}
+            Atual: {maxMp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} · MP atual: {mp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
           </p>
         </div>
 
