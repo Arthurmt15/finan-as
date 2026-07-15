@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 /**
  * Estado gamificado do jogador no estilo RPG.
@@ -40,7 +41,9 @@ export interface PlayerState {
   setSavings: (newMp: number) => void
 }
 
-export const usePlayerStore = create<PlayerState>((set, get) => ({
+export const usePlayerStore = create<PlayerState>()(
+  persist(
+    (set, get) => ({
   hp: 2500,
   maxHp: 2500,
   mp: 2000,
@@ -99,4 +102,6 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   setSavings: (newMaxMp) => {
     set({ maxMp: newMaxMp, mp: newMaxMp })
   },
-}))
+}),
+{ name: 'polybudget-player' }
+))
