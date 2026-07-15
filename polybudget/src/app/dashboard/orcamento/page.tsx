@@ -16,14 +16,13 @@ export default function OrcamentoPage() {
 
   const [budgetInput, setBudgetInput] = useState(String(maxHp))
   const [savingsInput, setSavingsInput] = useState(String(maxMp))
-  const [saved, setSaved] = useState(false)
 
   function handleSave() {
     const newBudget = Number(budgetInput)
     const newSavings = Number(savingsInput)
     if (newBudget > 0) setBudget(newBudget)
     if (newSavings >= 0) setSavings(newSavings)
-    setSaved(true)
+    router.push('/dashboard')
   }
 
   return (
@@ -41,7 +40,7 @@ export default function OrcamentoPage() {
             type="number"
             min="1"
             value={budgetInput}
-            onChange={(e) => { setBudgetInput(e.target.value); setSaved(false) }}
+            onChange={(e) => setBudgetInput(e.target.value)}
             className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none focus:border-ps1-yellow"
           />
           <p className="font-mono text-[10px] text-ps1-white/40 mt-1">
@@ -57,19 +56,13 @@ export default function OrcamentoPage() {
             type="number"
             min="0"
             value={savingsInput}
-            onChange={(e) => { setSavingsInput(e.target.value); setSaved(false) }}
+            onChange={(e) => setSavingsInput(e.target.value)}
             className="w-full bg-ps1-black border-2 border-ps1-white text-ps1-white font-pixel text-sm px-3 py-2 outline-none focus:border-ps1-yellow"
           />
           <p className="font-mono text-[10px] text-ps1-white/40 mt-1">
             Atual: {maxMp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} · MP atual: {mp.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
           </p>
         </div>
-
-        {saved && (
-          <p className="font-mono text-sm text-green-400 text-center mb-4 animate-pulse">
-            Salvo com sucesso!
-          </p>
-        )}
 
         <button
           onClick={handleSave}
