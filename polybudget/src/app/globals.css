@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+@layer base {
+  body {
+    @apply bg-ps1-black text-ps1-white font-mono antialiased;
+    image-rendering: pixelated;
+  }
+}
+
+@layer components {
+  .dialog-box {
+    @apply bg-ps1-blue border-2 border-ps1-white text-ps1-white p-4 shadow-ps1;
+    box-shadow: inset -2px -2px 0px #000080, inset 2px 2px 0px #6060ff;
+  }
+  .btn-ps1 {
+    @apply bg-ps1-blue-light border-2 border-ps1-white text-ps1-white px-4 py-2 
+           font-pixel text-xs uppercase tracking-wider
+           hover:bg-ps1-blue active:translate-y-0.5;
+    box-shadow: 3px 3px 0px #000;
+  }
+  .hp-bar {
+    @apply h-3 border border-ps1-white;
+    background: repeating-linear-gradient(
+      90deg,
+      #00a000 0px,
+      #00a000 4px,
+      #00c000 4px,
+      #00c000 8px
+    );
+  }
+  .mp-bar {
+    @apply h-3 border border-ps1-white;
+    background: repeating-linear-gradient(
+      90deg,
+      #0000c0 0px,
+      #0000c0 4px,
+      #3030ff 4px,
+      #3030ff 8px
+    );
+  }
+  .xp-bar {
+    @apply h-2 border border-ps1-white;
+    background: repeating-linear-gradient(
+      90deg,
+      #c0c000 0px,
+      #c0c000 4px,
+      #ffff00 4px,
+      #ffff00 8px
+    );
+  }
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+  }
+  .glow-text {
+    text-shadow: 2px 2px 0px #000, -1px -1px 0px rgba(255,255,255,0.1);
+  }
+}
