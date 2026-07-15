@@ -41,14 +41,14 @@ export interface PlayerState {
 }
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
-  hp: 1200,
+  hp: 2500,
   maxHp: 2500,
-  mp: 400,
+  mp: 2000,
   maxMp: 2000,
-  xp: 60,
+  xp: 0,
   xpToNext: 100,
-  level: 5,
-  streak: 3,
+  level: 1,
+  streak: 0,
   month: '2026-07',
 
   /** Deduz o valor do HP (não deixa ficar negativo) e incrementa o streak */
